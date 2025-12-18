@@ -6,37 +6,24 @@
   <title>ShortsCine</title>
 
   <link rel="stylesheet" href="/assets/2.css" />
-
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- Root do app -->
+  <!-- ⚠️ ID TEM QUE SER O MESMO DO HTML ORIGINAL -->
   <div id="app"></div>
 
-  <!-- Supabase (isolado, NÃO interfere no app) -->
+  <!-- Supabase isolado -->
   <script type="module">
     import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-    const SUPABASE_URL = "COLE_AQUI_SUA_PROJECT_URL";
-    const SUPABASE_ANON_KEY = "COLE_AQUI_SUA_ANON_PUBLIC_KEY";
-
     window.supabase = createClient(
-      SUPABASE_URL,
-      SUPABASE_ANON_KEY
+      "SUA_PROJECT_URL",
+      "SUA_ANON_PUBLIC_KEY"
     );
-
-    console.log("✅ Supabase pronto");
   </script>
 
-  <!-- App principal -->
+  <!-- Bundle principal (ordem IMPORTA) -->
   <script src="/assets/7.js"></script>
 
 </body>
