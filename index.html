@@ -1,32 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShortsCine</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShortsCine</title>
 
-  <link rel="stylesheet" href="/assets/2.css" />
-</head>
+    <link rel="stylesheet" crossorigin href="/assets/2.css" />
 
-<body>
+    <!-- Carrega o app do jeito que ele espera (IMPORTANTE) -->
+    <script type="module" crossorigin src="/assets/7.js"></script>
 
-  <!-- Container esperado pelo app -->
-  <div id="app"></div>
+    <!-- Supabase (global, sem mexer no bundle) -->
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-  <!-- Supabase (isolado, não interfere no app) -->
-  <script type="module">
-    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+      window.supabase = createClient(
+        "https://qlylsucoanjohwrkkroq.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFseWxzdWNvYW5qb2h3cmtrcm9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwMTA1MjksImV4cCI6MjA4MTU4NjUyOX0.zRjSf9Ynyvv-_H09a5IbeXVQLEdodZTNGd-mz8KLZjM"
+      );
 
-    window.supabase = createClient(
-      "https://qlylsucoanjohwrkkroq.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFseWxzdWNvYW5qb2h3cmtrcm9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwMTA1MjksImV4cCI6MjA4MTU4NjUyOX0.zRjSf9Ynyvv-_H09a5IbeXVQLEdodZTNGd-mz8KLZjM"
-    );
+      console.log("✅ Supabase pronto (window.supabase)");
+    </script>
+  </head>
 
-    console.log("✅ Supabase pronto");
-  </script>
-
-  <!-- ⚠️ BUNDLE PRINCIPAL TEM QUE SER MODULE -->
-  <script type="module" src="/assets/7.js"></script>
-
-</body>
+  <body>
+    <!-- ESTE ID TEM QUE SER root (senão o app não renderiza) -->
+    <div id="root"></div>
+  </body>
 </html>
