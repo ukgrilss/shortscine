@@ -433,10 +433,10 @@ ${w}`
 // === ÁREA DE CONFIGURAÇÃO DO SUPABASE (EDITE AQUI) ===================================
 // =====================================================================================
 
-const H4 = "https://qlylsucoanjohwrkkroq.supabase.co";
+const H4 = window.__SUPABASE_URL__ || "https://REPLACE_ME.supabase.co";
 // Exemplo: "https://xyz123.supabase.co"
 
-const K4 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFseWxzdWNvYW5qb2h3cmtrcm9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwMTA1MjksImV4cCI6MjA4MTU4NjUyOX0.zRjSf9Ynyvv-_H09a5IbeXVQLEdodZTNGd-mz8KLZjM";
+const K4 = window.__SUPABASE_ANON_KEY__ || "REPLACE_ME_ANON_KEY";
 // Exemplo: "eyJhbGcV..."
 
 // =====================================================================================
