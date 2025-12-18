@@ -5,44 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShortsCine</title>
 
-  <!-- CSS principal -->
   <link rel="stylesheet" href="/assets/2.css" />
 
-  <!-- Fallback visual (evita tela preta se JS demorar) -->
   <style>
     body {
       margin: 0;
       background: #000;
       color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    #loading {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #000;
-      z-index: 9999;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Loader simples -->
-  <div id="loading">
-    <p>Carregando...</p>
-  </div>
-
-  <!-- App root (o JS usa isso) -->
+  <!-- Root do app -->
   <div id="app"></div>
 
-  <!-- Supabase (CARREGA PRIMEIRO) -->
+  <!-- Supabase (isolado, NÃO interfere no app) -->
   <script type="module">
     import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-    // 🔴 TROQUE AQUI
     const SUPABASE_URL = "COLE_AQUI_SUA_PROJECT_URL";
     const SUPABASE_ANON_KEY = "COLE_AQUI_SUA_ANON_PUBLIC_KEY";
 
@@ -51,11 +33,11 @@
       SUPABASE_ANON_KEY
     );
 
-    console.log("✅ Supabase conectado");
+    console.log("✅ Supabase pronto");
   </script>
 
-  <!-- App principal (NÃO MEXER) -->
+  <!-- App principal -->
   <script src="/assets/7.js"></script>
 
-  <!-- Remove loader quando tudo carregar -->
-  <scri
+</body>
+</html>
