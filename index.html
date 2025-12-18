@@ -10,10 +10,10 @@
 
 <body>
 
-  <!-- ⚠️ ID TEM QUE SER O MESMO DO HTML ORIGINAL -->
+  <!-- Container esperado pelo app -->
   <div id="app"></div>
 
-  <!-- Supabase isolado -->
+  <!-- Supabase (isolado, não interfere no app) -->
   <script type="module">
     import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
@@ -21,11 +21,12 @@
       "https://qlylsucoanjohwrkkroq.supabase.co",
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFseWxzdWNvYW5qb2h3cmtrcm9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwMTA1MjksImV4cCI6MjA4MTU4NjUyOX0.zRjSf9Ynyvv-_H09a5IbeXVQLEdodZTNGd-mz8KLZjM"
     );
+
+    console.log("✅ Supabase pronto");
   </script>
 
-  <!-- Bundle principal (ordem IMPORTA) -->
-  <script src="/assets/7.js"></script>
+  <!-- ⚠️ BUNDLE PRINCIPAL TEM QUE SER MODULE -->
+  <script type="module" src="/assets/7.js"></script>
 
 </body>
 </html>
-
